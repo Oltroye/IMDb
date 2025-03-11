@@ -11,6 +11,11 @@ print("\nDimensions du dataset :", df.shape)
 
 df['length'] = df['review'].apply(len)
 
+total = len(df)
+positifs = len(df[df['sentiment'] == 'positive'])
+pourcentage_positif = (positifs / total) * 100
+print(f"\n✅ Il y a {positifs} commentaires positifs sur {total} ({pourcentage_positif:.2f}%)")
+
 print("\nLongueur moyenne des critiques par sentiment :")
 print(df.groupby('sentiment')['length'].mean())
 
