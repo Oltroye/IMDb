@@ -8,39 +8,39 @@ from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score, classification_report
 
-# 📌 Télécharger les ressources NLTK si ce n'est pas déjà fait
+# Télécharger les ressources NLTK si ce n'est pas déjà fait
 nltk.download('vader_lexicon')
 nltk.download('punkt')
 
-# 📌 Charger le dataset IMDB
+# Charger le dataset IMDB
 df = pd.read_csv("IMDB Dataset.csv")
 
-# 📌 Vérifier les valeurs manquantes
+# Vérifier les valeurs manquantes
 print("\n🔍 Valeurs manquantes par colonne :")
 print(df.isnull().sum())
 
-# 📌 Analyser la répartition des sentiments
+# Analyser la répartition des sentiments
 print("\n⚖️ Répartition des sentiments :")
 print(df['sentiment'].value_counts())
 
-# 📌 Ajouter une colonne de longueur des critiques
+#  Ajouter une colonne de longueur des critiques
 df['review_length'] = df['review'].apply(len)
 
-# 📌 Afficher les statistiques de longueur des critiques
+# Afficher les statistiques de longueur des critiques
 print("\n📏 Statistiques sur la longueur des critiques :")
 print(df['review_length'].describe())
 
-# 📊 **Visualisation des données**
+# **Visualisation des données**
 plt.figure(figsize=(12, 5))
 
-# 1️⃣ Histogramme des longueurs des critiques
+#  Histogramme des longueurs des critiques
 plt.subplot(1, 2, 1)
 sns.histplot(df['review_length'], bins=30, kde=True, color='blue')
 plt.title("Distribution de la longueur des critiques")
 plt.xlabel("Longueur (nombre de caractères)")
 plt.ylabel("Nombre de critiques")
 
-# 2️⃣ Graphique en barres des sentiments
+# Graphique en barres des sentiments
 plt.subplot(1, 2, 2)
 sns.countplot(x=df['sentiment'], palette=['green', 'red'])
 plt.title("Répartition des critiques positives et négatives")
