@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "imdb_analysis"
+version = "0.1.0"
+description = "Analyse des critiques de films IMDB"
+authors = ["Ton Nom <ton.email@example.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+pandas = "^1.3"
+seaborn = "^0.11"
+matplotlib = "^3.4"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
