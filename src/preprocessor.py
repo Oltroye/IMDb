@@ -20,7 +20,7 @@ class Preprocessor:
         self.df = pd.read_csv(filepath)
         print("\n🔍 Valeurs manquantes par colonne :")
         print(self.df.isnull().sum())
-
+        return self
 
     def transform(self):
         """
