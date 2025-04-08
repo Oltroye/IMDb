@@ -2,7 +2,15 @@
 name = "imdb-analysis"
 version = "0.1.0"
 description = "Analyse des critiques IMDB"
+<<<<<<< HEAD
 authors = ["Votre Nom <votre.email@example.com>"]
+=======
+<<<<<<< HEAD
+authors = ["dcleooo>"]
+=======
+authors = ["Votre Nom <votre.email@example.com>"]
+>>>>>>> d05a5b9 (pull)
+>>>>>>> cleo
 
 [tool.poetry.dependencies]
 python = "^3.8"
