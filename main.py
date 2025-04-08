@@ -2,7 +2,7 @@ from src.preprocessor import Preprocessor
 from src.model import Model
 from sklearn.model_selection import train_test_split
 
-if name == "main":
+if __name__ == "__main__":
     # Étape 1 : Prétraitement des données
     preprocessor = Preprocessor()
     df = preprocessor.fit_transform("data/IMDB Dataset.csv")
