@@ -1,5 +1,5 @@
 import os
-from src.analyse import analyse_data
+from src.preprocessor import analyse_data
 from src.model import train_model
 import pandas as pd
 
