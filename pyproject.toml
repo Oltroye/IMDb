@@ -2,7 +2,7 @@
 name = "imdb-analysis"
 version = "0.1.0"
 description = "Analyse des critiques IMDB"
-authors = ["Votre Nom <votre.email@example.com>"]
+authors = ["dcleooo>"]
 
 [tool.poetry.dependencies]
 python = "^3.8"

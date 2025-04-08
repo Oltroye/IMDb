@@ -10,3 +10,11 @@ if __name__ == "__main__":
     model = Model()
     model.train(df)
     model.evaluate()
+
+    train_test=train_test_split(data)
+    x_train, y_train=preprocessor.fit_transform(train)
+    model.train(x_train, y_train)
+    
+    x_test, y_test=preprocessor.fit_transform(test)
+    y_pred=model.predict(x_test)
+    model.evaluate(y_test, y_pred)
