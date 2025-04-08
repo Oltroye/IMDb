@@ -50,8 +50,4 @@ class Model:
         plt.title("Répartition des prédictions du modèle")
         plt.xlabel("Sentiment prédit")
         plt.ylabel("Nombre d'avis")
-<<<<<<< HEAD
         plt.show()
-=======
-        plt.show()
->>>>>>> cleo
