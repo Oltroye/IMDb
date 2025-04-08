@@ -1,25 +1,21 @@
-import os
-from src.preprocessor import analyse_data
-from src.model import train_model
-import pandas as pd
+from src.preprocessor import Preprocessor
+from src.model import Model
+from sklearn.model_selection import train_test_split
 
-def main():
-    try:
-       
-        data_path = os.path.join("data", "IMDB_Dataset.csv")
-        
-    
-        df = pd.read_csv(data_path)
-        
-        
-        analyse_data(df)
-        
-        train_model(df)
-        
-    except FileNotFoundError:
-        print(f"Erreur: Le fichier {data_path} n'a pas été trouvé.")
-    except Exception as e:
-        print(f"Une erreur est survenue: {str(e)}")
+if name == "main":
+    # Étape 1 : Prétraitement des données
+    preprocessor = Preprocessor()
+    df = preprocessor.fit_transform("data/IMDB Dataset.csv")
 
-if __name__ == "__main__":
-    main()
+    # Séparation des données en ensembles d'entraînement et de test
+    X = df['review_cleaned']
+    y = df['sentiment'].map({'positive': 1, 'negative': 0})
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+    # Étape 2 : Entraînement du modèle
+    model = Model()
+    model.train(X_train, y_train)
+
+    # Étape 3 : Prédictions et évaluation
+    y_pred = model.predict(X_test)
+    model.evaluate(y_test, y_pred)
